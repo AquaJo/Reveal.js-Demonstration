@@ -1,5 +1,9 @@
 # Reveal.js - Demonstration
-Showcases one whole presentation (about agro-geoecology), while the first slide belongs to another presentations' intro-page (about Newton-Raphson-Method)
+This project showcases one whole presentation (about Agro-Geoecology), only the first slide belongs to another presentation's intro-page (about Newton-Raphson-Method).\
+Both use q5.js (a lightweight alternative to p5.js) for animating the canvas.
+
+I really can recommend reveal.js as a fun, interactive, full-control, effective, ... presentation-framework!
+
 
 ### after clone
 ```bash
