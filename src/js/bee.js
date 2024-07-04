@@ -13,7 +13,7 @@ let canvas
 // doing stuff regarding intro and outro pages
 let p5Svg
 function preload() {
-    p5Svg = loadImage('./imgs/p5.svg') // ()
+    p5Svg = loadImage('./imgs/p5.svg') // () --> q5 ...
 }
 
 let bee = document.getElementById('bee')
@@ -22,10 +22,22 @@ let screenWidth = window.innerWidth
 
 let movingElement = bee
 const pathElement = document.getElementById('path')
+
 function setup() {
     createCanvas(2400, 1400)
-    canvas = document.getElementsByTagName('canvas')[0]
-    canvas.id = 'q5jsCanvas'
+    // grad the canvas by tag name wich has no id --> find right
+    let indexNeeded = 0
+    let canvases = document.getElementsByTagName('canvas')
+
+    Array.from(canvases).forEach((elm, index) => {
+        if (elm.id == '') {
+            indexNeeded = index
+        }
+    })
+
+    canvas = document.getElementsByTagName('canvas')[indexNeeded]
+    //canvas = document.getElementsByTagName('canvas')[0]
+    canvas.id = 'q5jsCanvas' + canvases.length
     canvas.style.position = 'absolute'
     canvas.style.left = 0
     canvas.style.top = 0

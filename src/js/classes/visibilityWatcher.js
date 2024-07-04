@@ -12,7 +12,9 @@ export default class VisibilityWatcher {
         const observerCallback = (entries, observer) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    callback()
+                    callback('visible')
+                } else {
+                    callback('hidden')
                 }
             })
         }
@@ -30,7 +32,9 @@ export default class VisibilityWatcher {
                 .takeRecords()
                 .some((entry) => entry.isIntersecting)
             if (initialVisibility) {
-                callback()
+                callback('visible')
+            } else {
+                callback('hidden')
             }
         }
     }

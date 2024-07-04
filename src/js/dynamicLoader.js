@@ -2,6 +2,7 @@
 import VisibilityWatcher from './classes/visibilityWatcher.js'
 
 let dependencies = [
+    { ids: ['introNewton'], scripts: ['./newton.js'] },
     { ids: ['intro', 'outro'], scripts: ['./bee.js'] },
     {
         ids: ['lokaleEbeneFirst'],
@@ -23,15 +24,19 @@ let watchers = []
 dependencies.forEach((dependency) => {
     dependency.ids.forEach((id) => {
         watchers.push(
-            new VisibilityWatcher().observe(document.getElementById(id), () => {
-                dependency.scripts.forEach((script) => {
-                    import(`${script}`).then((module) => {
-                        if (dependency.args) {
-                            module.default(dependency.args)
-                        }
+            new VisibilityWatcher().observe(
+                document.getElementById(id),
+                (visibility) => {
+                    if (visibility === 'hidden') return
+                    dependency.scripts.forEach((script) => {
+                        import(`${script}`).then((module) => {
+                            if (dependency.args) {
+                                module.default(dependency.args)
+                            }
+                        })
                     })
-                })
-            })
+                }
+            )
         )
     })
 })
