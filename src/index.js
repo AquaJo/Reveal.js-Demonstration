@@ -2,11 +2,11 @@ import Reveal from 'vendor/reveal.js/dist/reveal.js'
 //import RevealMarkdown from "vendor/reveal.js/plugin/markdown/markdown.js";
 //import RevealHighlight from "vendor/reveal.js/plugin/highlight/highlight.js";
 import RevealNotes from 'vendor/reveal.js/plugin/notes/notes.js'
-
 import './js/dynamicLoader.js'
 import html from './index.html' //
 //import "./js/bee.js";
 //import "./js/silhouette.js";
+
 import './styles.css'
 import './css/leaves.css'
 import 'vendor/reveal.js/dist/reset.css' //

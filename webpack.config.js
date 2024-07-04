@@ -18,7 +18,7 @@ module.exports = {
     //devtool: "source-map",
     plugins: [
         new HtmlWebpackPlugin({
-            filename: isLocalMode ? 'index_.html' : 'index.html',
+            filename: 'index.html',
             template: path.join(
                 __dirname,
                 'src/' + (isLocalMode ? 'index_.html' : 'index.html')

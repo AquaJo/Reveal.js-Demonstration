@@ -6,7 +6,7 @@ export default class VisibilityWatcher {
         const observerOptions = {
             root: null, // Use the viewport as the root
             rootMargin: '0px',
-            threshold: 0.01, // Trigger when 10% of the target is visible
+            threshold: 0.05, // Trigger when 5% of the target is visible
         }
 
         const observerCallback = (entries, observer) => {
@@ -23,6 +23,16 @@ export default class VisibilityWatcher {
         )
 
         this.observer.observe(element)
+
+        // Check if element is initially visible
+        if (element && this.observer) {
+            const initialVisibility = this.observer
+                .takeRecords()
+                .some((entry) => entry.isIntersecting)
+            if (initialVisibility) {
+                callback()
+            }
+        }
     }
     disconnect() {
         this.observer.disconnect()
