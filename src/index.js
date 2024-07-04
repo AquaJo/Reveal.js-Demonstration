@@ -14,6 +14,7 @@ import 'vendor/reveal.js/dist/reveal.css'
 import 'vendor/reveal.js/dist/theme/black.css'
 import 'vendor/reveal.js/plugin/highlight/monokai.css'
 import './css/font-ini.css'
+
 // src/index.js
 
 Reveal.initialize({

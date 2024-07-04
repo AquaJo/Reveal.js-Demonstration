@@ -47,6 +47,12 @@ function setup() {
             ctx.drawImage(img, x, y)
         }
     }
+
+    //
+    if (sectionOutro.classList.contains('present')) {
+        // if outro is already present
+        toPresentOutro()
+    }
 }
 function generatePathStuff() {
     const lines = [
@@ -302,6 +308,8 @@ let sectionStateWatcher2 = new ClassWatcher(
 )
 
 let sectionOutro = document.getElementById('outro')
+// check if outro is already present
+
 let sectionStateWatcherOutro = new ClassWatcher(
     sectionOutro,
     'present',
