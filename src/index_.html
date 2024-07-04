@@ -1,0 +1,552 @@
+<!DOCTYPE html><html lang="en"><head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Landwirtschaft im Fokus</title>
+        <link rel="icon" href="./favicon.svg">
+    </head>
+    <body>
+        <div class="reveal">
+            <div style="height: 29px; width: 100%">
+                <div id="leaves">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </div>
+            </div>
+
+            <div id="cursor-ball" class="theBall-outer">
+                <div class="theBall"></div>
+            </div>
+
+            <div class="slides">
+                <section id="intro" class="intro" data-background-color="white">
+                    <main id="p5jsCanvas" class="sketch"></main>
+                    <svg id="svg-path" style="
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            visibility: hidden;
+                        " width="100%" height="100%">
+                        <path id="path" fill="none" stroke="black"></path>
+                    </svg>
+                    <img style="position: absolute; margin: 0" id="bee" src="./imgs/bee.png" alt="bee">
+                    <div class="container">
+                        <img class="farm" style="width: 800px" src="./imgs/farm.png" alt="farm">
+                        <div style="position: relative; width: 100%; top: 470px">
+                            <h2>Agrar-Geoökologie im Fokus</h2>
+                            <h3>Ist Landwirtschaft "vulnerabel"?</h3>
+                            <h4>
+                                Bezug, Probleme - Global vs lokal &amp;
+                                regional, Lösungen
+                            </h4>
+                            <h4>Präsentation von AquaJo</h4>
+                        </div>
+                    </div>
+
+                    <aside class="notes">
+                        Shhh, these are your private notes 📝
+                    </aside>
+                </section>
+                <section class="content">
+                    <h1>Gliederung</h1>
+                    <div class="topics">
+                        <div class="row">
+                            <div>
+                                <h3>01</h3>
+                                <p class="content-header">Warum das Thema?</p>
+                                <ul>
+                                    <li>Entwicklungen</li>
+                                    <li>Bedeutung</li>
+                                    <li>Auf was achtet ihr?</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3>02</h3>
+                                <p class="content-header">globale Probleme</p>
+                                <ul>
+                                    <li>Verursachende Probleme</li>
+                                    <li>Ausgesetze Herausforderungen</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3>03</h3>
+                                <p class="content-header">lokal/regional</p>
+                                <ul>
+                                    <li>Herausforderungen</li>
+                                    <li>Restriktionen</li>
+                                    <li>Folgen</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row second">
+                            <div>
+                                <h3>04</h3>
+                                <p class="content-header">Lösungen?</p>
+                                <ul>
+                                    <li>Plenum</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section data-transition="slide-in fade-out">
+                    <h2>Warum?</h2>
+                    <p class="fragment fade-up">Klimawandel</p>
+                    <p style="margin-left: 160px" class="fragment fade-up subp">
+                        Extreme wie Dürre
+                    </p>
+                    <p style="margin-left: 160px" class="fragment fade-up subp">
+                        Bienensterben
+                    </p>
+                    <p style="margin-left: 160px" class="fragment fade-up subp">
+                        Invasion
+                    </p>
+                    <p style="margin-left: 160px" class="fragment fade-up subp">
+                        ...
+                    </p>
+                    <p class="fragment fade-up">Protest</p>
+                    <p class="fragment fade-up">Unwissen</p>
+                    <p style="color: red" class="fragment fade-up">
+                        Wichtigkeit
+                    </p>
+                </section>
+                <section class="startQuote" data-transition="fade">
+                    <section>
+                        <p class="quote fragment custom topMove">
+                            "If agriculture goes wrong, nothing else will have a
+                            chance to go right." -
+                            <span class="author">M. S. Swaminathan</span>
+                        </p>
+
+                        <div class="sektorContainer">
+                            <img class="fragment fade-in custom hideNshow" src="./imgs/downloads/download_Sektoren.webp" alt="Sektoren">
+                        </div>
+                    </section>
+
+                    <section data-transition="fade-in" id="plenum1">
+                        <h3 class="fragment custom blur">
+                            Auf was achtet Ihr?
+                        </h3>
+                        <h3 class="fragment custom blur">
+                            Was ist euch schon so aufgefallen?
+                        </h3>
+                    </section>
+                </section>
+
+                <section data-background-color="rgb(246,251,255)">
+                    <img src="./imgs/downloads/download_Ven.jpeg" alt="Ven">
+                </section>
+                <section data-background-color="rgb(246,251,255)">
+                    <img src="./imgs/downloads/download_Bevoelkerungswachstum.jpeg" alt="Bevoelkerungswachstum">
+                </section>
+                <section data-transition="fade-in">
+                    <section>
+                        <h2>
+                            <span class="fragment fade-up">~ </span> Problem
+                            Klimawandel
+                        </h2>
+                    </section>
+                    <section id="Bodendegradation">
+                        <h2>Bodendegradation &amp; Versalzung</h2>
+                        <p class="fragment fade-up">
+                            beschreibt die Verschlechterung der Qualität von
+                            Böden bis zum Verlust seiner Funktionsfähigkeit
+                        </p>
+                        <p class="fragment fade-up subp">
+                            Biodiversitäts- &amp; Lebensgrundlagen-Senkung durch
+                            Wasser-, Sauerstoff- und Nähstoffgehalt-Verlust
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Natürliche Ursachen</h2>
+                        <img style="width: 1500px" class="" src="./imgs/downloads/download_KlimaDegradation.jpeg" alt="KlimaDegradation">
+                        <aside class="notes">
+                            - z.B. Extremwetterereignisse wie Starkregen, Wind,
+                            Trockenheit, Absinken des Grundwasserpegels, ...
+                            u.a. verantwortlich <br>
+                            - Starkregen z.B. fegen teils zwischen 100 bis 300
+                            Jahren aufgebaute Humusbodenschichten weg <br>
+                            - ABER AUCH MENSCH-Landwirtschaft im Zwiespiel mit
+                            Klima als Effekt als aber auch direkte Ursache
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Direkte Ursachen</h2>
+                        <img style="width: 1500px" class="" src="./imgs/downloads/download_MenschDegradation.jpeg" alt="MenschDegradation">
+                        <aside class="notes">
+                            - Entwaldung, zu intensive Landwirtschaft und
+                            Bodenversauerung durch falsche oder übermäßige
+                            Düngernutzung auch von Problem
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Grundlegende Ursachen</h2>
+                        <p class="fragment fade-up">
+                            ärmere Bevölkerung ist darauf angewiesen ungeeignete
+                            Landnutzung oder Landbewirtschaftungspraktiken zu
+                            nutzen, um an Nahrungsmittel zu kommen <br>
+                            <span class="fragment fade-in">⇓ <br>
+                                Soziales (z.B. Bevölkerungswachstum)
+                                <span style="color: #44ffd1">↯</span>
+                                Klimawandel
+                                <span style="color: #44ffd1">↯</span>
+                                Biodiversität</span>
+                        </p>
+                    </section>
+                    <section>
+                        <img style="width: 1500px" class="" src="./imgs/downloads/download_Desertifikation.jpeg" alt="Desertifikation">
+
+                        <aside class="notes">
+                            - Desertifikation vielleicht als gutes Beispiel für
+                            solche Ursachen: oftmals in bereits trockeneren,
+                            armen Gebieten? ....
+                            <br>
+                            - aber auch die Frage wie allg. Bio kompatibel ist
+                            mit den Bedürfnissen der Menschen? - also sprich wie
+                            toll Bio ist? (naja, schon komplizierter ofc)
+                        </aside>
+                    </section>
+                    <section data-background-color="rgb(246,251,255)">
+                        <h3>
+                            Bio
+                            <span style="color: #44ffd1">↯</span>
+                            Bevölkerungswachstum?
+                        </h3>
+                        <img src="./imgs/downloads/download_BioProblem.jpeg" alt="BioProblem">
+
+                        <aside class="notes">
+                            - Bioanbau ist nicht so effizient wie konventionelle
+                            Landbewirtschaftungspraktiken <br>
+                            - Experten (Agrarwissenschaftler) gehen davon aus,
+                            dass ohne modernen Pflanzenschutz weltweit bis zu
+                            40% der Ernten durch Schädlinge &amp; Unkraut
+                            verloren gehen würden
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <div class="silhouette"></div>
+                        <h2>Wie schaut es auf lokalerer Ebene aus?</h2>
+                    </section>
+
+                    <section>
+                        <img width="1600px" src="./imgs/downloads/download_DeutschlandGetreideernte.svg+xml" alt="DeutschlandGetreideernte">
+                        <aside class="notes">
+                            -&gt; Tertiärisierung!! / Quartärisierung, ...
+                            <br>
+                            - nur 1% der Bruttowertschöpfung durch
+                            land-Fortstwirtschaft und Fischerei und Anteil
+                            beschäftigter von nur 1.2 % <br>
+                            - trzd. verzwickt mit anderen Wirtschaften und
+                            deshalb essentieller Wirtschaftsbereich: 4.6
+                            Millionen Arbeiter im Agribusiness, ...
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Wie schaut es auf lokalerer Ebene aus?</h2>
+                        <p class="fragment fade-up">
+                            Auf 50 % der Flächen wird Landwirtschaft betrieben
+                        </p>
+                        <p class="fragment fade-up subp">
+                            Davon 70 % Ackerland
+                        </p>
+
+                        <p style="position: relative; height: 600px" class="fragment fade-up">
+                            Rückgang der landwirtschaftlichen Betriebe,<br>jedoch
+                            starke Zunahme im Bereich der Bio-Landwirtschaft
+                            <span><img style="
+                                        position: absolute;
+                                        filter: invert(1);
+                                        height: 600px;
+                                        top: -470px;
+                                        left: 200px;
+                                    " src="./imgs/oekbetriebe.png" alt="Oekbetriebe"></span>
+                        </p>
+                        <div style="margin-top: -485px">
+                            <p class="fragment fade-up">
+                                1900 -&gt; 1 Landwirt versorgte 4 Personen
+                                <br>
+                                1950 -&gt; 1 Landwirt versorgte 10 Personen
+                                <br>
+                                heute -&gt; 1 Landwirt versorgt 140 Personen
+                            </p>
+
+                            <p class="fragment fade-up subp">
+                                dies durch modernere Technologien und auf Kosten
+                                der Umwelt (Grundwasser, ...)
+                            </p>
+                            <p class="fragment fade-up" style="color: red">
+                                Anbau von Tierfutter nimmt einen Großteil der
+                                Flächen ein (10 Millionen Hektar)
+                            </p>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <div style="margin-top: -100px"></div>
+                    <img style="height: 500px" src="./imgs/bawue.png" alt="bawue">
+                    <h2>Herausforderungen bei uns und Baden-Württemberg</h2>
+                </section>
+                <section>
+                    <section data-background-color="white">
+                        <img src="./imgs/downloads/download_klimaHier.png" alt="klimaHier">
+                        <img style="
+                                position: absolute;
+                                left: 430px;
+                                top: -130px;
+                                height: 300px;
+                            " src="./imgs/downloads/download_sun.webp" alt="sun">
+                    </section>
+                    <section>
+                        <h2>Folgen des Klimawandels hierzulande konkreter</h2>
+                        <p class="fragment fade-up">
+                            Baden-Württemberg als Land mit Durchschnitt von 9°C
+                            bereits jetzt einer der wärmsten Gebiete
+                            Deutschlands
+                            <br>
+                            <span style="color: #44ffd1; font-size: 2em" class="fragment fade-in">⇓</span>
+                        </p>
+                        <p class="fragment fade-up">
+                            Verstärkende Ausprägung jetzt und in Zukunft (siehe
+                            Karte zuvor)
+                            <br>
+                            <span style="color: #44ffd1; font-size: 2em" class="fragment fade-in">⇓</span>
+                        </p>
+                        <p class="fragment fade-up">
+                            Ernteausfall durch plötzliche Hitzeperioden bei
+                            sonst nicht zu trockenem Frühjahr
+                        </p>
+                        <p class="fragment fade-up subp">
+                            Wurzelausprägung durch gute Verhältnisse im Frühjahr
+                            nicht an den unerwartet dürren Sommer angepasst!
+                            Außerdem ist der Schorfbefall dann bestärkt!
+                            <br>
+                            <span style="color: #44ffd1; font-size: 3em" class="fragment fade-in">⇓</span>
+                        </p>
+                        <p class="fragment fade-up">Ausweich auf Maisanbau</p>
+                    </section>
+                    <section>
+                        <h3>Aber auch Mais hält nicht alles aus</h3>
+                        <img style="width: 2000px" src="./imgs/downloads/download_mais.jpeg" alt="mais">
+                        <aside class="notes">
+                            - Mais ist zwar sehr robust, aber auch er hat seine
+                            Grenzen: hat man vor nicht allzulaner zeit sehr
+                            stark an unserem Feld gesehen: ganz klein,
+                            krüppelige Ernte ...
+                        </aside>
+                    </section>
+                    <section>
+                        <p class="quote fragment custom topMove">
+                            "An solch einen Verlauf des Wetters [2023] kann sich
+                            [Karlsruher] Werner Kunz zuletzt 2003 erinnern" -
+                            <span class="author">SWR</span>
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Invasive Arten?</h2>
+                    </section>
+                    <section>
+                        <h2>Asiatische Hornisse</h2>
+                        <p class="fragment fade-up">
+                            Invasive Art, die Biodiversität hierzulande
+                            einschränken könnte
+                        </p>
+                        <p class="fragment fade-up">
+                            Macht Jagd auf Bienen, Hummeln oder Schmetterlinge
+                        </p>
+                        <p class="fragment fade-up">
+                            Potenzielle Gefahr, auch natürlich für die
+                            Landwirtschaft
+                        </p>
+                    </section>
+                    <section>
+                        <h3>
+                            Interessant: Mehrung der Funde, auch auffällig im
+                            Rhein-Neckar-Kreis
+                        </h3>
+                        <img src="./imgs/downloads/download_hornisse.jpeg" alt="hornisse">
+                    </section>
+                    <section>
+                        <h3>Vielfältig weitere Beispiele für invasive Arten</h3>
+                        <img src="./imgs/downloads/download_grundel.jpeg" alt="grundel">
+                    </section>
+                </section>
+                <section id="sources">
+                    <h2>Quellen</h2>
+
+                    <ul>
+                        <li>
+                            <a href="https://www.bayer.com/de/de/hsdf-was-sind-die-grossen-herausforderungen-der-landwirtschaft">Bayer - Beitrag</a>
+                        </li>
+                        <li>
+                            <a href="https://www.cambridge.org/core/journals/journal-of-agricultural-science/article/abs/crop-losses-to-pests/AD61661AD6D503577B3E73F2787FE7B2">Cambridge - Auswirkungen von
+                                Bio-Landwirtschaft</a>
+                        </li>
+                        <li>
+                            <a href="https://www.studysmarter.de/schule/geographie/deutschland/landwirtschaft-in-deutschland/">Studysmarter - Deutschland &amp;
+                                Landwirtschaft</a>
+                        </li>
+                        <li>
+                            <a href="https://www.umweltbundesamt.de/themen/wasser/gewaesser/grundwasser/nutzung-belastungen/naehr-schadstoffe#kleine-schritte-in-die-richtige-richtung-ziel-aber-noch-lange-nicht-erreicht-deutscher-nitratbericht-2020-veroffentlicht">Umweltbundesamt - Grundwasserauswirkungen</a>
+                        </li>
+                        <li>
+                            <a href="https://www.umweltbundesamt.de/themen/landwirtschaft/umweltbelastungen-der-landwirtschaft">Umweltbundesamt - Umweltbelastungen</a>
+                        </li>
+                        <li>
+                            <a href="https://www.bmel.de/SharedDocs/Downloads/DE/Broschueren/daten-fakten-2022.pdf?__blob=publicationFile&amp;v=8">Bundesministerium für Ernährung und
+                                Landwirtschaft - Jahresbericht</a>
+                        </li>
+                        <li>
+                            <a href="https://www.quarks.de/umwelt/klimawandel/so-veraendert-sich-das-klima-in-deiner-region/">
+                                Quarks - Klimawandel in Deutschland
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://um.baden-wuerttemberg.de/fileadmin/redaktion/m-um/intern/Dateien/Dokumente/2_Presse_und_Service/Publikationen/Klima/Klimawandel_in_Baden-Wuerttemberg.pdf">
+                                Umweltministerium Baden-Württemberg -
+                                Klimawandel in BW
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.kws.com/de/de/beratung/bestandesfuehrung/krankheiten/trockenheit/">
+                                kws.com - Auswirkung von Trockenheit
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.lubw.baden-wuerttemberg.de/natur-und-landschaft/asiatische-hornisse-fundortkarte">
+                                LUBW - Asiatische Hornisse
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://pflanzen.fnr.de/energiepflanzen/bienenfreundliche-energiepflanzen/bienen-und-landwirtschaft">
+                                FNR - Bienen und Landwirtschaft
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.landwirtschaft.de/landwirtschaft-verstehen/wie-arbeiten-foerster-und-pflanzenbauer/was-waechst-auf-deutschlands-feldern">
+                                landwirtschaft.de - Was wächst auf Deutschlands
+                                Feldern?
+                            </a>
+                        </li>
+                        <hr>
+                        <li>
+                            <a href="https://trading.de/lexikon/sektoren-in-der-wirtschaft/">Sektorenmodell</a>
+                        </li>
+                        <li>
+                            <a href="https://upload.wikimedia.org/wikipedia/commons/c/c3/Agribusiness_vs_agroecology.jpg">
+                                Intro-/ Outro- Unbewegt-Assets
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://codepen.io/uurrnn/pen/WNLVdN
+              ">Codepen - Leaves</a>
+                        </li>
+                        <li>
+                            <a href="https://codepen.io/leemartin/pen/vYgBaev
+              ">Codepen - Location-Mark</a>
+                        </li>
+                        <li>
+                            <a href="https://giphy.com/stickers/babymoriofficial-sunshine-mori-babymori-Q1pxfXxXMaVxxqI2gr
+              ">Giphy - Animierte Sonne</a>
+                        </li>
+                        <hr>
+                        <li>
+                            <a href="https://www.geeksforgeeks.org/how-to-draw-smooth-curve-through-multiple-points-using-javascript/
+              ">geeksforgeeks - Bezierkurven-Tutorial</a>
+                        </li>
+                        <li>
+                            <a href="https://www.anyrec.io/image-upscaler/">
+                                anyrec.io - Bildupscaling
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.remove.bg/de/upload
+              ">
+                                remove.bg - Hintergrundentferner</a>
+                        </li>
+                    </ul>
+                </section>
+                <section id="outro" class="intro" data-background-color="black">
+                    <svg id="svg-path" style="
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            visibility: hidden;
+                        " width="100%" height="100%">
+                        <path id="path" fill="none" stroke="black"></path>
+                    </svg>
+                    <img style="position: absolute; margin: 0" id="beeOutro" src="./imgs/bee.png" alt="bee">
+                    <div class="container">
+                        <img class="farm" style="width: 800px; filter: invert(1); z-index: -1" src="./imgs/farm.png" alt="farm">
+                        <div style="position: relative; width: 100%; top: 470px">
+                            <h2>Lösungen? - im Plenum</h2>
+                            <h3 style="color: white">Danke fürs Zuhören</h3>
+                            <h4 style="color: wheat">
+                                Präsentation von AquaJo
+                            </h4>
+                        </div>
+                    </div>
+
+                    <aside class="notes">
+                        <ul>
+                            <li>Ideen</li>
+                            <ul>
+                                <li>
+                                    Veganer leben -&gt; kein Futter noch
+                                    benötigt CO2 etc. -&gt; dann vllt. auch Bio
+                                    besser möglich?
+                                </li>
+                                <li>
+                                    keine Sprenkler-Beregnung um
+                                    Grundwasserspiegel aufrecht zu erhalten
+                                </li>
+                                <li>
+                                    Technische Regulation so viel wie nötig, so
+                                    wenig wie möglich? (Gentechnik etc., aber
+                                    auch z.B. Selektion manipulieren ...)
+                                </li>
+                                <li>Grünstreifen</li>
+                                <li>Politik? ...</li>
+                            </ul>
+                        </ul>
+                    </aside>
+                </section>
+            </div>
+        </div>
+
+        <!-- <script src="./libs/reveal.js/dist/reveal.js"></script>
+    <script src="./libs/reveal.js/plugin/notes/notes.js"></script>
+    <script src="./libs/reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="./libs/reveal.js/plugin/highlight/highlight.js"></script> -->
+        <!-- <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+        width: 2400,
+        height: 1400,
+      });
+    </script> -->
+    
+
+</body></html>

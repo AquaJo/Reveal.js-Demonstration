@@ -1,0 +1,11 @@
+.silhouette {
+  background: url(https://assets.codepen.io/141041/caamp-texture-02.jpg);
+  background-size: cover;
+  background-position: center;
+  background-size: 200% 200%;
+  height: 360px;
+  width: 360px;
+  -webkit-mask: url(https://assets.codepen.io/141041/place-icon.png);
+  -webkit-mask-size: cover;
+  mix-blend-mode: darken;
+} /* NOT OFFLINE AVAILABLE AT THE MOMENT BC OF HOTLINKING!*/

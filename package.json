@@ -1,0 +1,28 @@
+{
+    "scripts": {
+        "buildPrimitive": "node_modules\\.bin\\webpack",
+        "build": "webpack",
+        "build:local": "node fetch-script.js && cross-env localMode=true webpack",
+        "dev": "webpack serve",
+        "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\""
+    },
+    "devDependencies": {
+        "@babel/core": "^7.24.7",
+        "@babel/preset-env": "^7.24.7",
+        "axios": "^1.7.2",
+        "babel-loader": "^9.1.3",
+        "cheerio": "^1.0.0-rc.12",
+        "copy-webpack-plugin": "^12.0.2",
+        "cross-env": "^7.0.3",
+        "css-loader": "^7.1.2",
+        "html-loader": "^5.0.0",
+        "html-webpack-plugin": "^5.6.0",
+        "mime-types": "^2.1.35",
+        "prettier": "3.3.2",
+        "style-loader": "^4.0.0",
+        "webpack": "^5.92.1",
+        "webpack-bundle-analyzer": "^4.10.2",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^5.0.4"
+    }
+}
