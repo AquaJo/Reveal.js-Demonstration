@@ -10,9 +10,11 @@ const libsFolders = [
 ] // specific paths in case a library is in active maintenance
 
 const isLocalMode = process.env.localMode === 'true'
+const isProductionMode = process.env.productionMode === 'true'
 console.log('isLocalMode:', isLocalMode)
+console.log('isProductionMode:', isProductionMode)
 module.exports = {
-    mode: 'development',
+    mode: isProductionMode ? 'production' : 'development',
     //devtool: "source-map",
     plugins: [
         new HtmlWebpackPlugin({

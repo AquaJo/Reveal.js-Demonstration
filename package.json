@@ -1,8 +1,7 @@
 {
     "scripts": {
         "buildPrimitive": "node_modules\\.bin\\webpack",
-        "build": "webpack",
-        "build:local": "node fetch-script.js && cross-env localMode=true webpack",
+        "build": "node build.js",
         "dev": "webpack serve",
         "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\""
     },
