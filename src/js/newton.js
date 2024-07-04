@@ -6,9 +6,12 @@ let section = document.getElementById('introNewton')
 let p = new Q5() //initialize q5
 
 let present = false
-new VisibilityWatcher().observe(section, (visibility) => {
+new VisibilityWatcher().observe(section, (visibility, ini) => {
     if (visibility === 'visible') {
         present = true
+        if (ini) {
+            document.getElementById('leaves').style.opacity = 0
+        }
     } else {
         present = false
     }

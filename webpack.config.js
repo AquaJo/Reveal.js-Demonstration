@@ -37,6 +37,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, '/dist'),
         filename: '[name].[contenthash].js',
+        chunkFilename: 'bundles/[name].[chunkhash].js',
         clean: true,
     },
     devServer: {

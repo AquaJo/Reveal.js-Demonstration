@@ -285,6 +285,7 @@ let sectionStateWatcher = new ClassWatcher(
 )
 let myp5
 let leaveInterval
+toPresent()
 function toPresent() {
     movingElement = document.getElementById('bee')
     clearInterval(leaveInterval)

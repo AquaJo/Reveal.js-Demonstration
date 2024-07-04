@@ -3,6 +3,7 @@ export default class VisibilityWatcher {
         this.observer = null
     }
     observe(element, callback) {
+        let counter = 0
         const observerOptions = {
             root: null, // Use the viewport as the root
             rootMargin: '0px',
@@ -12,10 +13,19 @@ export default class VisibilityWatcher {
         const observerCallback = (entries, observer) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    callback('visible')
+                    if (counter === 0) {
+                        callback('visible', true)
+                    } else {
+                        callback('visible', false)
+                    }
                 } else {
-                    callback('hidden')
+                    if (counter === 0) {
+                        callback('hidden', true)
+                    } else {
+                        callback('hidden', false)
+                    }
                 }
+                counter++
             })
         }
         // Initialize IntersectionObserver with the callback and options
@@ -26,17 +36,17 @@ export default class VisibilityWatcher {
 
         this.observer.observe(element)
 
-        // Check if element is initially visible
+        /* // Check if element is initially visible
         if (element && this.observer) {
             const initialVisibility = this.observer
                 .takeRecords()
                 .some((entry) => entry.isIntersecting)
             if (initialVisibility) {
-                callback('visible')
+                callback('visible', true)
             } else {
-                callback('hidden')
+                callback('hidden', true)
             }
-        }
+        } */
     }
     disconnect() {
         this.observer.disconnect()
