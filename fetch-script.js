@@ -19,6 +19,10 @@ async function downloadImage(url, imagePath) {
         const contentType = response.headers['content-type']
         if (contentType.startsWith('image/')) {
             let ext = '.' + contentType.split('/')[1]
+            if (ext === '.svg+xml') {
+                // ...
+                ext = '.svg'
+            }
             const writer = fs.createWriteStream(imagePath + ext)
             response.data.pipe(writer)
 
