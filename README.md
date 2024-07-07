@@ -42,4 +42,18 @@ This will start the webpack-development server with hot-reloading enabled.
 
 ## Docker
 
-When using docker in dev-mode, be sure to mount volumes to the container from a linux environment!, ... else feel free to add polling to webpack.s
+Once the container runs, it listens on http://localhost:7823/
+
+#### For Development Purposes (live updating)
+
+```bash
+docker compose -f docker-compose.dev.yaml up
+```
+
+When using docker in dev-mode, be sure to mount volumes to the container from a linux environment!, ... else feel free to add polling to webpack.
+
+#### Else
+
+```bash
+docker compose -f docker-compose.prod.yaml up
+```
