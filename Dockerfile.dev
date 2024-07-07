@@ -10,4 +10,5 @@ COPY . .
 
 EXPOSE 8723
 
-CMD ["npm", "run", "dev"]
+CMD ["sh", "-c", "while true; do sleep 1000; done"]
+
