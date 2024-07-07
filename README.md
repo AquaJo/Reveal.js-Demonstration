@@ -42,4 +42,4 @@ This will start the webpack-development server with hot-reloading enabled.
 
 ## Docker
 
-When using docker in dev-mode, be sure to mount volumes to the container from a linux environment!, ... else feel free to add polling to webpack.
+When using docker in dev-mode, be sure to mount volumes to the container from a linux environment!, ... else feel free to add polling to webpack.s
