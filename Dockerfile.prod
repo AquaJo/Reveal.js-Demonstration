@@ -10,6 +10,4 @@ COPY . .
 
 RUN npm run build -- --dl --prod
 
-EXPOSE 8723
-
 CMD ["npm", "run", "spinup"]

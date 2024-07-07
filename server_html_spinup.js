@@ -53,7 +53,7 @@ const server = http.createServer((req, res) => {
     })
 })
 
-const port = 8723
+const port = 7823
 
 server.listen(port, () => {
     let url = `http://localhost:${port}/`
