@@ -81,7 +81,7 @@ body {
 }
 
 .reveal .intro h3 {
-    color: rgb(0, 0, 0);
+    color: #222 !important; /* gets overwritten else?*/
     font-size: 1.4em;
 }
 

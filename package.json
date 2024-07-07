@@ -3,6 +3,7 @@
         "buildPrimitive": "node_modules\\.bin\\webpack",
         "build": "node build.js",
         "dev": "webpack serve",
+        "spinup": "node server_html_spinup.js",
         "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\""
     },
     "devDependencies": {

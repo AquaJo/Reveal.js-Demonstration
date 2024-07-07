@@ -1,0 +1,8 @@
+services:
+    reveal-demo-prod:
+        build:
+            context: .
+            dockerfile: Dockerfile.prod
+        container_name: reveal-demo-prod_c
+        ports:
+            - '7823:7823'

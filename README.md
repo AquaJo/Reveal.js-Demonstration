@@ -1,11 +1,12 @@
 # Reveal.js - Demonstration
+
 This project showcases one whole presentation (about Agro-Geoecology), only the first slide belongs to another presentation's intro-page (about Newton-Raphson-Method).\
 Both use q5.js (a lightweight alternative to p5.js) for animating the canvas.
 
 I really can recommend reveal.js as a fun, interactive, full-control, effective, ... presentation-framework!
 
-
 ### after clone
+
 ```bash
 npm install
 ```
@@ -20,8 +21,8 @@ npm run build
 
 ### Optional Parameters for Build
 
-- `--dl`: Downloads hotlinked images before the build process.
-- `--prod`: Uses webpack in production mode.
+-   `--dl`: Downloads hotlinked images before the build process.
+-   `--prod`: Uses webpack in production mode.
 
 You can use these optional parameters like this:
 
@@ -38,3 +39,7 @@ npm run dev
 ```
 
 This will start the webpack-development server with hot-reloading enabled.
+
+## Docker
+
+When using docker in dev-mode, be sure to mount volumes to the container from a linux environment!, ... else feel free to add polling to webpack.
