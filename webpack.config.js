@@ -44,11 +44,14 @@ module.exports = {
         static: {
             directory: path.join(__dirname, '/dist'),
         },
-        port: 8723,
+        port: 7823, // needs to be the same allocated port on the client for hot reloading to work in docker
         hot: true,
         open: true,
         compress: true,
         historyApiFallback: true,
+        /* watchOptions: { // if you are on windows, you may need to set this option (regarding docker and inotify events)
+            poll: true // Or you can set a value in milliseconds.
+          }, */
     },
     module: {
         rules: [

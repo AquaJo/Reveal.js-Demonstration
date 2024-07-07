@@ -8,7 +8,5 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 8723
-
-CMD ["sh", "-c", "while true; do sleep 1000; done"]
+CMD ["npm", "run", "dev"]
 
