@@ -57,3 +57,8 @@ When using docker in dev-mode, be sure to mount volumes to the container from a 
 ```bash
 docker compose -f docker-compose.prod.yaml up
 ```
+
+#### Bun
+
+When using bun via `bun run` it actually uses node.js nevertheless in this case.\
+See `bun --bun run` - errors
