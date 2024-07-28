@@ -1,7 +1,6 @@
 # Reveal.js - Demonstration
 
-This project showcases one whole presentation (about Agro-Geoecology), only the first slide belongs to another presentation's intro-page (about Newton-Raphson-Method).\
-Both use q5.js (a lightweight alternative to p5.js) for animating the canvas.
+This project showcases a full presentation on Agro-Geoecology, with an introductory slide from a separate presentation about the Newton-Raphson Method. Both presentations utilize q5.js, a lightweight alternative to p5.js, for canvas animations.
 
 I really can recommend reveal.js as a fun, interactive, full-control, effective, ... presentation-framework!
 
@@ -52,11 +51,12 @@ docker compose -f docker-compose.dev.yaml up
 
 When using docker in dev-mode, be sure to mount volumes to the container from a linux environment!, ... else feel free to add polling to webpack.
 
-#### Else
+#### Else - Onetime-Build
 
 ```bash
 docker compose -f docker-compose.prod.yaml up
 ```
+---
 
 #### Bun
 
